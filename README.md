@@ -17,3 +17,4 @@ Raw web application with a basic setup to explore Viam datapipelines.
 
 1. `npm run install`
 2. Start the application wiht `npm run dev`
+3. Open the developer console (there is currently no output on the webfrontend!)
