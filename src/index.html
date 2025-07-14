@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phillies Web App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Welcome to Phillies Web App</h1>
+        <nav>
+          <button id="queue-btn" class="nav-btn">Queue Data</button>
+          <button id="about-btn" class="nav-btn">About</button>
+        </nav>
+      </header>
+
+      <main>
+        <div id="queue-section" class="section">
+          <h2>Queue Sensor Data</h2>
+          <div id="queue-data" class="data-container">
+            <p>Loading queue data...</p>
+          </div>
+        </div>
+
+        <div id="about-section" class="section hidden">
+          <h2>About</h2>
+          <p>
+            This is a TypeScript web application for displaying Phillies queue
+            sensor data.
+          </p>
+          <p>Built with TypeScript, Vite, and modern web technologies.</p>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+[
+    {
+        "$match": {
+            "location_id": "2ia26a46on",
+            "robot_id": "00fa49c9-a111-47f8-875c-2a61ad21276b",
+            "part_id": "bbb7c844-ea4c-46c8-9bd6-779c7910e8f6",
+            "component_name": {
+                "$in": [
+                    "queue-sensor-mashgin",
+                    "queue-sensor-cooperstown"
+                ]
+            },
+            "time_received": {
+                "$ne": null
+            }
+        }
+    },
+    {
+        "$project": {
+            "component_name": 1,
+            "time_received": 1,
+            "events": {
+                "$objectToArray": "$data.readings"
+            }
+        }
+    },
+    {
+        "$unwind": {
+            "path": "$events"
+        }
+    },
+    {
+        "$unwind": {
+            "path": "$events.v"
+        }
+    },
+    {
+        "$project": {
+            "tracking_id": "$events.v",
+            "time": "$time_received",
+            "queue": "$component_name",
+            "zone": "$events.k"
+        }
+    }
+]
