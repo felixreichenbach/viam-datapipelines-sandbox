@@ -23,17 +23,6 @@ export default defineConfig(({ command, mode }) => {
       port: 3000,
       open: true,
     },
-    resolve: {
-      alias: {
-        // Override specific modules with your custom versions
-        "@viamrobotics/sdk/dist/gen/app/data/v1/data_pb": path.resolve(
-          __dirname,
-          "src/custom-modules/data_pb.ts"
-        ),
-        // Or override the entire SDK
-        // "@viamrobotics/sdk": path.resolve(__dirname, "src/custom-modules/viam-sdk-override.ts"),
-      },
-    },
     define: {
       // Make env variables available in your app
       // Explicitly define the environment variables
